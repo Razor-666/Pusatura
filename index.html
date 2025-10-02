@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="tampilan-awal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <style>
+      /* Reset dan Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      :root {
+        --primary: #1a4f72;
+        --primary-dark: #0d2d4c;
+        --primary-light: #2c7db1;
+        --secondary: #e63946;
+        --accent: #fca311;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --gray: #6c757d;
+        --brown: #964b00;
+        --light-gray: #e9ecef;
+        --success: #28a745;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary);
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: var(--primary-light);
+      }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--primary);
+        color: white;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .logo h1 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .user-actions a {
+        color: white;
+        margin-left: 15px;
+      }
+
+      .user-actions a:hover {
+        color: var(--accent);
+      }
+
+      /* Navigation */
+      nav {
+        background-color: var(--primary-dark);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        color: white;
+        font-weight: 500;
+      }
+
+      nav ul li a:hover {
+        background-color: var(--accent);
+      }
+
+      nav ul li.active a {
+        background-color: var(--accent);
+      }
+
+      /* Dropdown menu %%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+      .dropdown {
+        position: relative;
+        /* display: inline-block; */
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        /* list-style: none; */
+        background-color: white;
+        min-width: 200px;
+        font-size: small;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        /* overflow-y: auto; */
+      }
+
+      .dropdown-content a {
+        color: var(--dark);
+        padding: 3px 4px;
+        display: block;
+        /* cursor: pointer; */
+      }
+
+      .dropdown-content a:hover {
+        background-color: var(--accent);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(kantor1.jpeg);
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      /* Search Section */
+      .search-section {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: -80px auto 30px;
+        position: relative;
+        max-width: 900px;
+      }
+
+      .search-tabs {
+        display: flex;
+        border-bottom: 1px solid var(--light-gray);
+        margin-bottom: 20px;
+      }
+
+      .search-tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      .search-tab.active {
+        border-bottom: 3px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .search-form {
+        display: flex;
+        gap: 10px;
+      }
+
+      .search-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .search-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .search-btn:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .advanced-search {
+        margin-top: 15px;
+      }
+
+      .advanced-search a {
+        color: var(--primary);
+        font-size: 14px;
+      }
+
+      /* Filter Section */
+      .filter-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .filter-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .filter-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .filter-group {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .filter-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .filter-group select {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+      }
+
+      /* Main Content */
+      .main-content {
+        display: flex;
+        gap: 30px;
+      }
+
+      .content {
+        flex: 2;
+      }
+
+      .sidebar {
+        flex: 1;
+      }
+
+      /* Document List */
+      .document-list {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .document-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--light-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .document-header h3 {
+        color: var(--primary);
+      }
+
+      .sort-options select {
+        padding: 5px 10px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+      }
+
+      .document-item {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .document-item:last-child {
+        border-bottom: none;
+      }
+
+      .document-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .document-meta {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+        color: var(--gray);
+        margin-bottom: 10px;
+      }
+
+      .document-type {
+        background-color: var(--primary-light);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .document-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .document-actions a {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 5px;
+      }
+
+      .pagination a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+      }
+
+      .pagination a.active {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      /* Sidebar Widgets */
+      .widget {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .widget h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .category-list {
+        list-style: none;
+      }
+
+      .category-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .category-list li:last-child {
+        border-bottom: none;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 15px;
+        background-color: var(--light);
+        border-radius: 8px;
+      }
+
+      .stat-number {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: var(--gray);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary-dark);
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 10px;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 110px;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-column h4 {
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: #ccc;
+      }
+
+      .footer-column ul li a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .main-content {
+          flex-direction: column;
+        }
+
+        .search-form {
+          flex-direction: column;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .hero h2 {
+          font-size: 28px;
+        }
+
+        .hero {
+          height: 300px;
+        }
+
+        .search-section {
+          margin-top: -50px;
+        }
+
+        .filter-options {
+          flex-direction: column;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">
+            <img
+              src="PUSATURA.png"
+              alt="error image"
+              class="animate__animated animate__pulse animate__infinite"
+            />
+            <h1>PUSATURA</h1>
+          </div>
+          <div class="user-actions">
+            <!-- <a href="#"><i class="fas fa-user"></i> Login</a> -->
+            <a
+              href="https://wa.me/6282228884917?text=Halo%2C%20Terimakasih%20telah%20menghubungi%20kami%20Pesan%20Anda%20sudah%20kami%20terima%20dan%20akan%20segera%20ditangani%20oleh%20tim%20kami.%20Mohon bersabar,%20kami%20akan%20menghubungi%20Anda%20kembali%20secepatnya."
+              target="_blank"
+              ><i class="fas fa-question-circle"></i> Bantuan
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="container">
+          <ul>
+            <li class="">
+              <a href="#"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <!-- <li>
+              <a href="halaman_Dasar-Hukum.html"
+                ><i class="fas fa-list-alt"></i> Dasar Hukum</a
+              >
+            </li> -->
+            <!-- <li class="dropdown">
+              <a href="#"
+                ><i class="fas fa-file-alt"></i> Peraturan Penugasan
+                <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" target="_blank"
+                  >Pengawasan Penerapan Standar Pelayanan Minimal</a
+                >
+                <a href="#"
+                  >Pengawasan Ketaatan Norma, Standar, Prosedur, Kriteria dalam
+                  Pelaksanaan Urusan Pemerintahan
+                </a>
+                <a href="#">Pengawasan Umum ke Kabupaten/Kota</a>
+                <a href="#"
+                  >Pemeriksaan Kinerja Penyelenggaraan Urusan Pemerintahan
+                  Konkuren</a
+                >
+                <a href="#"
+                  >Pengawasan Dampak atas Pelaksanaan Urusan Pemerintahan</a
+                >
+                <a href="#"
+                  >Reviu RPJPD, RPJMD, dan Renstra Perangkat Daerah serta
+                  Perubahannya</a
+                >
+                <a href="#">Reviu RKPD dan Perubahannya</a>
+                <a href="#"
+                  >Reviu Rencana Kerja Perangkat Daerah dan Perubahannya</a
+                >
+                <a href="#">Reviu dan Evaluasi LPPD</a>
+                <a href="#"
+                  >Asistensi dan Supervisi Pelaksanaan Urusan Pemerintahan
+                  Konkuren</a
+                >
+                <a href="#"
+                  >Monitoring dan Evaluasi serta Supervisi Pelaksanaan Urusan
+                  Pemerintahan Daerah</a
+                >
+                <a href="#">Pengawasan Pelayanan Publik</a>
+                <a href="#"
+                  >Pemberian Keterangan Ahli Terkait Urusan Pemerintahan</a
+                >
+                <a href="#">Reviu Mutasi, Rotasi, dan Promosi ASN</a>
+                <a href="#"
+                  >Pengawasan Tujuan Tertentu terkait Penyalahgunaan
+                  Wewenang/Pelanggaran Disiplin ASN</a
+                >
+                <a href="#"
+                  >Penugasan Pengawasan Lainnya sesuai Perintah Inspektur
+                  Daerah</a
+                >
+              </div>
+            </li> -->
+            <li>
+              <a href="halaman_Dasar-Hukum.html"
+                ><i class="fas fa-list-alt"></i> Dasar Hukum</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-list-alt"></i> SOP</a>
+            </li>
+            <li class="dropdown">
+              <a href="#"
+                ><i class="fas fa-file-alt"></i> Pedoman Penugasan
+                <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <a href="#" target="_blank"
+                  >Pengawasan Penerapan Standar Pelayanan Minimal</a
+                >
+                <a href="#"
+                  >Pengawasan Ketaatan Norma, Standar, Prosedur, Kriteria dalam
+                  Pelaksanaan Urusan Pemerintahan
+                </a>
+                <a href="#">Pengawasan Umum ke Kabupaten/Kota</a>
+                <a href="#"
+                  >Pemeriksaan Kinerja Penyelenggaraan Urusan Pemerintahan
+                  Konkuren</a
+                >
+                <a href="#"
+                  >Pengawasan Dampak atas Pelaksanaan Urusan Pemerintahan</a
+                >
+                <a href="#"
+                  >Reviu RPJPD, RPJMD, dan Renstra Perangkat Daerah serta
+                  Perubahannya</a
+                >
+                <a href="#">Reviu RKPD dan Perubahannya</a>
+                <a href="#"
+                  >Reviu Rencana Kerja Perangkat Daerah dan Perubahannya</a
+                >
+                <a href="#">Reviu dan Evaluasi LPPD</a>
+                <a href="#"
+                  >Asistensi dan Supervisi Pelaksanaan Urusan Pemerintahan
+                  Konkuren</a
+                >
+                <a href="#"
+                  >Monitoring dan Evaluasi serta Supervisi Pelaksanaan Urusan
+                  Pemerintahan Daerah</a
+                >
+                <a href="#">Pengawasan Pelayanan Publik</a>
+                <a href="#"
+                  >Pemberian Keterangan Ahli Terkait Urusan Pemerintahan</a
+                >
+                <a href="#">Reviu Mutasi, Rotasi, dan Promosi ASN</a>
+                <a href="#"
+                  >Pengawasan Tujuan Tertentu terkait Penyalahgunaan
+                  Wewenang/Pelanggaran Disiplin ASN</a
+                >
+                <a href="#"
+                  >Penugasan Pengawasan Lainnya sesuai Perintah Inspektur
+                  Daerah</a
+                >
+              </div>
+            </li>
+            <!-- <li>
+              <a href="#"><i class="fas fa-book"></i> Pedoman</a>
+            </li> -->
+            <!-- <li>
+              <a href="#"><i class="fas fa-info-circle"></i> Informasi</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-download"></i> Download</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-envelope"></i> Kontak</a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Pusat Aturan dan Regulasi</h2>
+        <p>
+          PUSATURA merupakan media yang menyediakan akses terhadap berbagai
+          produk hukum seperti peraturan, SOP, dan pedoman untuk mendukung
+          transparansi dan kepatuhan hukum.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h4>Inspektorat Daerah Kabupaten Berau</h4>
+            <ul>
+              <li>
+                <a href="https://inspektorat.beraukab.go.id/profil">Profil</a>
+              </li>
+              <li>
+                <a href="https://inspektorat.beraukab.go.id/visi"
+                  >Visi dan Misi</a
+                >
+              </li>
+              <li>
+                <a href="https://inspektorat.beraukab.go.id/struktur"
+                  >Struktur Organisasi</a
+                >
+              </li>
+              <!-- <li><a href="#">Dasar Hukum</a></li> -->
+            </ul>
+          </div>
+
+          <!-- <div class="footer-column">
+            <h4>Layanan</h4>
+            <ul>
+              <li><a href="#">Pencarian Dokumen</a></li>
+              <li><a href="#">Umpan Balik</a></li>
+              <li><a href="#">Berlangganan</a></li>
+              <li><a href="#">Statistik</a></li>
+            </ul>
+          </div> -->
+
+          <div class="footer-column">
+            <h4>Kontak</h4>
+            <ul>
+              <li>
+                <a href="https://maps.app.goo.gl/LAs1mAUzTUkHHVax9"
+                  ><i class="fas fa-map-marker-alt"></i> Jl. SM. Aminudin,
+                  Bugis, Kec. Tj. Redeb, Kabupaten Berau, Kalimantan Timur
+                  77352</a
+                >
+              </li>
+
+              <li>
+                <a href="https://wa.me/6281350451960"
+                  ><i class="fas fa-phone"></i> +62 813-5045-1960</a
+                >
+              </li>
+
+              <li>
+                <i class="fas fa-envelope"></i> inspektorat@beraukab.go.id
+              </li>
+              <!-- <li><i class="fas fa-globe"></i> www.jdih.go.id</li> -->
+            </ul>
+          </div>
+
+          <!-- <div class="footer-column">
+            <h4>Tautan Terkait</h4>
+            <ul>
+              <li><a href="#">Kementerian Hukum dan HAM</a></li>
+              <li><a href="#">Mahkamah Agung</a></li>
+              <li><a href="#">Komisi Yudisial</a></li>
+              <li><a href="#">BPK</a></li>
+            </ul>
+          </div> -->
+        </div>
+
+        <div class="footer-bottom">
+          <p>2025 © Copyright by Inspektorat Kabupaten Berau.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple JavaScript for interactive elements
+      document.addEventListener("DOMContentLoaded", function () {
+        // Search tabs functionality
+        // const searchTabs = document.querySelectorAll(".search-tab");
+
+        // searchTabs.forEach((tab) => {
+        //   tab.addEventListener("click", function () {
+        //     searchTabs.forEach((t) => t.classList.remove("active"));
+        //     this.classList.add("active");
+        //   });
+        // });
+
+        // Dropdown menus
+        const dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach((dropdown) => {
+          dropdown.addEventListener("mouseenter", function () {
+            this.querySelector(".dropdown-content").style.display = "block";
+          });
+
+          dropdown.addEventListener("mouseleave", function () {
+            this.querySelector(".dropdown-content").style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
